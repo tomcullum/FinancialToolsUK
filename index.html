@@ -7,341 +7,104 @@
 <meta name="description" content="Four professional Excel templates for UK sole traders and landlords. MTD-ready, HMRC-aligned, updated for the 2026/27 tax year.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}:root{--bg:#070A07;--sf:#0D120E;--sf2:#131A14;--bd:#1E2A1F;--bdl:#2A3A2C;--tx:#E4EAE5;--txd:#7A8E7C;--txm:#4A5E4C;--ac:#5BF5A0;--acg:rgba(91,245,160,.15);--bl:#5BA4F5;--am:#F5C95B;--co:#F57B5B;--tl:#5BF5D9;--se:'Instrument Serif',Georgia,serif;--sa:'Manrope',system-ui,sans-serif;--mo:'JetBrains Mono',monospace}html{scroll-behavior:smooth}body{font-family:var(--sa);background:var(--bg);color:var(--tx);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased}a{color:inherit}body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}.gl{position:fixed;border-radius:50%;filter:blur(160px);opacity:.08;pointer-events:none;z-index:0}.g1{width:700px;height:700px;top:-250px;right:-200px;background:var(--ac)}.g2{width:500px;height:500px;bottom:20%;left:-200px;background:var(--bl);opacity:.05}.g3{width:400px;height:400px;bottom:-100px;right:10%;background:var(--tl);opacity:.04}@keyframes fu{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@keyframes pu{0%,100%{opacity:.4}50%{opacity:1}}.an{opacity:0;animation:fu .7s cubic-bezier(.22,1,.36,1) forwards}.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}.d6{animation-delay:.6s}.d7{animation-delay:.7s}.d8{animation-delay:.8s}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(7,10,7,.75);backdrop-filter:blur(30px) saturate(1.2);border-bottom:1px solid rgba(91,245,160,.06)}.logo{font-family:var(--se);font-size:1.6rem;display:flex;align-items:center;gap:12px;letter-spacing:-.02em;text-decoration:none;color:var(--tx);cursor:pointer}.lm{width:34px;height:34px;background:linear-gradient(135deg,var(--ac),var(--tl));border-radius:8px;display:grid;place-items:center;font-family:var(--mo);font-weight:700;font-size:.75rem;color:var(--bg)}.nl{display:flex;gap:28px;align-items:center}.nl a,.nl button{background:none;border:none;text-decoration:none;color:var(--txd);font-family:var(--sa);font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:color .25s;padding:0}.nl a:hover,.nl button:hover,.nl .av{color:var(--ac)}.mt{display:none;background:none;border:none;cursor:pointer;color:var(--tx);padding:8px}.mt svg{width:24px;height:24px}
+.bp{display:inline-flex;align-items:center;gap:8px;background:var(--ac);color:var(--bg);padding:12px 28px;border-radius:50px;font-family:var(--sa);font-weight:700;font-size:.85rem;text-decoration:none;border:none;cursor:pointer;letter-spacing:.02em;transition:transform .2s,box-shadow .3s}.bp:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(91,245,160,.3)}.bp svg{width:16px;height:16px}.bo{display:inline-flex;align-items:center;gap:8px;background:0 0;border:1.5px solid var(--bdl);color:var(--tx);padding:12px 28px;border-radius:50px;font-family:var(--sa);font-weight:600;font-size:.85rem;text-decoration:none;cursor:pointer;transition:border-color .25s,background .25s}.bo:hover{border-color:var(--ac);background:rgba(91,245,160,.05)}.be{display:inline-flex;align-items:center;gap:10px;background:#F1641E;color:#fff;padding:14px 32px;border-radius:50px;font-family:var(--sa);font-weight:700;font-size:.9rem;text-decoration:none;border:none;cursor:pointer;transition:transform .2s,box-shadow .3s}.be:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(241,100,30,.35)}
+.pg{display:none}.pg.vis{display:block}section{padding:100px 32px;position:relative;z-index:1}.ct{max-width:1280px;margin:0 auto}.cs{max-width:900px;margin:0 auto}.sl{font-family:var(--mo);font-size:.72rem;color:var(--ac);text-transform:uppercase;letter-spacing:.18em;font-weight:500;margin-bottom:16px}.st{font-family:var(--se);font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;letter-spacing:-.02em;max-width:650px;font-weight:400}.sd{color:var(--txd);font-size:1.05rem;max-width:520px;margin-top:18px;line-height:1.7}
+.ph{padding:160px 32px 80px;position:relative;z-index:1}.bc{font-family:var(--mo);font-size:.72rem;color:var(--txm);margin-bottom:24px;letter-spacing:.06em}.bc button{background:none;border:none;color:var(--txd);cursor:pointer;font-family:var(--mo);font-size:.72rem;letter-spacing:.06em;padding:0;transition:color .2s}.bc button:hover{color:var(--ac)}.bc span{margin:0 8px}.ph h1{font-family:var(--se);font-size:clamp(2.4rem,5vw,4rem);line-height:1.08;letter-spacing:-.025em;font-weight:400;max-width:700px}.ph h1 em{font-style:italic;color:var(--ac)}.ph .hs{font-size:1.1rem;color:var(--txd);max-width:560px;margin-top:22px;line-height:1.7}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 32px 80px}.hb{display:inline-flex;align-items:center;gap:8px;padding:8px 18px 8px 10px;background:var(--sf2);border:1px solid var(--bd);border-radius:50px;font-size:.78rem;font-weight:600;color:var(--txd);margin-bottom:32px;letter-spacing:.03em}.hb .dot{width:8px;height:8px;background:var(--ac);border-radius:50%;animation:pu 2s ease-in-out infinite}.hero h1{font-family:var(--se);font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.05;letter-spacing:-.03em;max-width:900px;font-weight:400}.hero h1 em{font-style:italic;color:var(--ac)}.hero .hs{font-size:1.15rem;color:var(--txd);max-width:560px;margin:28px auto 0;line-height:1.7}.hc{display:flex;gap:16px;margin-top:44px;flex-wrap:wrap;justify-content:center}
+.sb{display:flex;justify-content:center;padding:0 32px;position:relative;z-index:1}.si{text-align:center;padding:32px 50px;position:relative}.si:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:40px;background:var(--bd)}.sn{font-family:var(--mo);font-size:2rem;font-weight:700;color:var(--ac);letter-spacing:-.02em}.slb{font-size:.76rem;color:var(--txm);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-top:6px}
+.tg{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:60px}.tc{background:var(--sf);border:1px solid var(--bd);border-radius:20px;overflow:hidden;transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .35s,box-shadow .35s;position:relative;cursor:pointer;text-decoration:none;color:var(--tx);display:block}.tc:hover{transform:translateY(-6px);border-color:var(--bdl);box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 80px var(--acg)}.tc:hover .al{transform:scaleX(1)}.al{position:absolute;top:0;left:0;right:0;height:2px;border-radius:2px 2px 0 0;transform:scaleX(0);transition:transform .4s cubic-bezier(.22,1,.36,1);transform-origin:left}.th{padding:36px 36px 0;display:flex;align-items:flex-start;justify-content:space-between}.ti{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;flex-shrink:0}.ts{font-family:var(--mo);font-size:.68rem;padding:5px 12px;border-radius:50px;background:var(--sf2);border:1px solid var(--bd);color:var(--txd);font-weight:500;white-space:nowrap}.tb{padding:20px 36px 28px}.tb h3{font-family:var(--se);font-size:1.55rem;letter-spacing:-.02em;font-weight:400;line-height:1.2;margin-bottom:10px}.tb .td{font-size:.88rem;color:var(--txd);line-height:1.65}.tf{padding:0 36px 32px;display:flex;flex-wrap:wrap;gap:8px}.ft{font-size:.72rem;font-weight:600;padding:6px 14px;border-radius:50px;background:var(--sf2);border:1px solid var(--bd);color:var(--txd);letter-spacing:.02em;transition:border-color .25s,color .25s}.tc:hover .ft{border-color:var(--bdl);color:var(--tx)}.tfo{padding:18px 36px;border-top:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.008)}.tp{font-family:var(--mo);font-size:1.2rem;font-weight:700}.tp span{font-size:.72rem;font-weight:500;color:var(--txm);margin-left:4px}.ta{font-size:.78rem;font-weight:700;color:var(--ac);display:flex;align-items:center;gap:6px;letter-spacing:.02em;transition:gap .25s}.tc:hover .ta{gap:10px}.ta svg{width:14px;height:14px}
+.cg .al{background:linear-gradient(90deg,var(--ac),var(--tl))}.cg .ti{background:rgba(91,245,160,.1);color:var(--ac)}.cb .al{background:linear-gradient(90deg,var(--bl),#8B5BF5)}.cb .ti{background:rgba(91,164,245,.1);color:var(--bl)}.ca .al{background:linear-gradient(90deg,var(--am),var(--co))}.ca .ti{background:rgba(245,201,91,.1);color:var(--am)}.cx .al{background:linear-gradient(90deg,var(--tl),var(--ac))}.cx .ti{background:rgba(91,245,217,.1);color:var(--tl)}
+.fr{display:flex;gap:20px;margin-top:50px;flex-wrap:wrap}.fc{flex:1;min-width:200px;background:var(--sf);border:1px solid var(--bd);border-radius:16px;padding:32px 28px;transition:border-color .3s,background .3s}.fc:hover{border-color:var(--bdl);background:var(--sf2)}.fc .fi{font-size:1.6rem;margin-bottom:18px;display:block}.fc h4{font-family:var(--se);font-size:1.15rem;font-weight:400;margin-bottom:8px}.fc p{font-size:.82rem;color:var(--txd);line-height:1.65}
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:50px;background:var(--bd);border-radius:16px;overflow:hidden}.ic{background:var(--sf);padding:32px 28px;transition:background .3s}.ic:hover{background:var(--sf2)}.ic .in{font-family:var(--mo);font-size:2.2rem;font-weight:700;color:var(--ac);line-height:1;margin-bottom:8px}.ic h5{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}.ic p{font-size:.8rem;color:var(--txd);line-height:1.55}
+.tq{font-family:var(--se);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.35;letter-spacing:-.02em;font-weight:400;margin-top:40px;position:relative;padding:0 20px}.tq::before{content:'\201C';position:absolute;top:-20px;left:-10px;font-size:5rem;color:var(--ac);opacity:.2;font-family:var(--se);line-height:1}.tt{margin-top:24px;font-size:.88rem;color:var(--txm)}.tt strong{color:var(--txd);font-weight:600}
+.cx2{background:linear-gradient(135deg,var(--sf2) 0%,var(--sf) 50%,rgba(91,245,160,.04) 100%);border:1px solid var(--bdl);border-radius:24px;padding:80px 60px;text-align:center;position:relative;overflow:hidden}.cx2::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,var(--ac),transparent);opacity:.5;border-radius:2px}.cx2 h2{font-family:var(--se);font-size:clamp(2rem,4vw,3rem);letter-spacing:-.02em;font-weight:400;line-height:1.1}.cx2 p{color:var(--txd);font-size:1.05rem;max-width:480px;margin:20px auto 36px;line-height:1.7}.cb2{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.dm{display:flex;gap:32px;margin-top:32px;flex-wrap:wrap}.dmi{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--txd)}.dmi svg{width:16px;height:16px;color:var(--ac);flex-shrink:0}.dc{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:60px;padding:0 32px 100px;position:relative;z-index:1}.sls{list-style:none;margin-top:28px}.sls li{padding:16px 0;border-bottom:1px solid var(--bd);display:flex;align-items:flex-start;gap:14px;font-size:.9rem}.sls li:first-child{border-top:1px solid var(--bd)}.snm{font-family:var(--mo);font-size:.7rem;font-weight:700;color:var(--ac);background:rgba(91,245,160,.08);padding:3px 9px;border-radius:6px;flex-shrink:0;margin-top:2px}.sinf strong{display:block;font-weight:600;margin-bottom:3px}.sinf span{font-size:.8rem;color:var(--txd)}.sbar{background:var(--sf);border:1px solid var(--bd);border-radius:20px;padding:36px;position:sticky;top:110px;height:fit-content}.sbar h3{font-family:var(--se);font-size:1.4rem;font-weight:400;margin-bottom:6px}.sbar .sp{font-family:var(--mo);font-size:2.2rem;font-weight:700;color:var(--ac);margin:16px 0 8px}.sbar .sp span{font-size:.85rem;font-weight:500;color:var(--txm)}.sbar ul{list-style:none;margin:24px 0;border-top:1px solid var(--bd);padding-top:20px}.sbar li{padding:8px 0;font-size:.85rem;color:var(--txd);display:flex;align-items:center;gap:10px}.sbar li::before{content:'✓';color:var(--ac);font-weight:700;font-size:.8rem}.scta{display:flex;flex-direction:column;gap:10px;margin-top:24px}.scta .be,.scta .bo{width:100%;justify-content:center}.snt{font-size:.75rem;color:var(--txm);text-align:center;margin-top:16px;line-height:1.5}
+.fqi{border-bottom:1px solid var(--bd)}.fqi:first-child{border-top:1px solid var(--bd)}.fqq{width:100%;background:none;border:none;padding:24px 0;font-family:var(--sa);font-size:1.05rem;font-weight:600;color:var(--tx);text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:color .2s}.fqq:hover{color:var(--ac)}.fqq .fqic{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--bdl);display:grid;place-items:center;flex-shrink:0;transition:border-color .2s,transform .3s;color:var(--txd);font-size:1.2rem}.fqi.op .fqic{transform:rotate(45deg);border-color:var(--ac);color:var(--ac)}.fqa{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.22,1,.36,1)}.fqi.op .fqa{max-height:400px}.fqai{padding:0 0 24px;font-size:.92rem;color:var(--txd);line-height:1.75;max-width:640px}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:60px}.ac{background:var(--sf);border:1px solid var(--bd);border-radius:20px;padding:40px 36px}.ac h3{font-family:var(--se);font-size:1.4rem;font-weight:400;margin-bottom:14px}.ac p{font-size:.9rem;color:var(--txd);line-height:1.75}.av{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:60px}.vc{background:var(--sf);border:1px solid var(--bd);border-radius:16px;padding:32px 24px;text-align:center;transition:border-color .3s}.vc:hover{border-color:var(--bdl)}.vc .vi{font-size:2rem;margin-bottom:16px;display:block}.vc h4{font-family:var(--se);font-size:1.1rem;font-weight:400;margin-bottom:8px}.vc p{font-size:.8rem;color:var(--txd);line-height:1.6}
+footer{padding:50px 48px 40px;border-top:1px solid var(--bd);position:relative;z-index:1}.fin{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px}.fbr .logo{font-size:1.3rem;margin-bottom:12px}.fbr p{font-size:.78rem;color:var(--txm);max-width:280px;line-height:1.6}.fco h5{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--txd);margin-bottom:14px}.fco a,.fco button{display:block;font-size:.82rem;color:var(--txm);text-decoration:none;background:none;border:none;cursor:pointer;font-family:var(--sa);padding:4px 0;transition:color .2s;text-align:left}.fco a:hover,.fco button:hover{color:var(--ac)}.fbt{max-width:1280px;margin:30px auto 0;padding-top:24px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;font-size:.72rem;color:var(--txm);flex-wrap:wrap;gap:10px}
+@media(max-width:900px){nav{padding:14px 20px}.nl{display:none;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:rgba(7,10,7,.95);backdrop-filter:blur(24px);padding:24px;border-bottom:1px solid var(--bd);gap:16px}.nl.opn{display:flex}.mt{display:block}.tg,.ig,.ag{grid-template-columns:1fr}.av{grid-template-columns:1fr}section{padding:60px 20px}.ph{padding:120px 20px 60px}.th,.tb,.tf,.tfo{padding-left:24px;padding-right:24px}.si{padding:20px 24px}.sb{flex-wrap:wrap}.cx2{padding:50px 28px}.fr{flex-direction:column}.dc{grid-template-columns:1fr;gap:40px}.sbar{position:static}.fin{flex-direction:column;gap:30px}.hero{padding:120px 20px 60px}}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdl);border-radius:4px}
+</style>
 </head>
 <body>
+<div class="gl g1"></div><div class="gl g2"></div><div class="gl g3"></div>
 
-<div class="glow glow-1"></div>
-<div class="glow glow-2"></div>
-<div class="glow glow-3"></div>
-
-<!-- NAV -->
 <nav>
-  <a href="index.html" class="logo">
-    <div class="logo-mark">£</div>
-    FinanceToolsUK
-  </a>
-  <button class="mobile-toggle" aria-label="Menu">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-  </button>
-  <div class="nav-links">
-    <a href="index.html" class="active">Home</a>
-    <a href="#templates">Templates</a>
-    <a href="about.html">About</a>
-    <a href="faq.html">FAQ</a>
-    <a href="#cta" class="btn-primary">Get the Bundle</a>
+  <a class="logo" onclick="go('home')"><div class="lm">£</div>FinanceToolsUK</a>
+  <button class="mt" onclick="document.getElementById('NL').classList.toggle('opn')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+  <div class="nl" id="NL">
+    <button onclick="go('home')" data-p="home" class="av">Home</button>
+    <button onclick="go('home','templates')" data-p="templates">Templates</button>
+    <button onclick="go('about')" data-p="about">About</button>
+    <button onclick="go('faq')" data-p="faq">FAQ</button>
+    <a href="#etsy-bundle-link" class="bp" style="padding:10px 22px;font-size:.82rem">Get the Bundle</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero" style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:140px 32px 80px;">
-  <div class="hero-badge animate delay-1" style="display:inline-flex; align-items:center; gap:8px; padding:8px 18px 8px 10px; background:var(--surface-2); border:1px solid var(--border); border-radius:50px; font-size:0.78rem; font-weight:600; color:var(--text-dim); margin-bottom:32px; letter-spacing:0.03em;">
-    <span class="dot" style="width:8px; height:8px; background:var(--accent); border-radius:50%; animation:pulse 2s ease-in-out infinite;"></span>
-    Updated for 2026/27 Tax Year
-  </div>
-  <h1 class="animate delay-2" style="font-family:var(--serif); font-size:clamp(2.8rem,7vw,5.5rem); line-height:1.05; letter-spacing:-0.03em; max-width:900px; font-weight:400;">
-    Self-employed tax,<br><em style="font-style:italic; color:var(--accent);">sorted</em>
-  </h1>
-  <p class="animate delay-3" style="font-size:1.15rem; color:var(--text-dim); max-width:560px; margin:28px auto 0; line-height:1.7;">
-    Four professional Excel templates built for UK sole traders and landlords. HMRC-ready, MTD-aligned, and designed to save you hours every quarter.
-  </p>
-  <div class="animate delay-4" style="display:flex; gap:16px; margin-top:44px; flex-wrap:wrap; justify-content:center;">
-    <a href="#templates" class="btn-primary">
-      Explore Templates
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M7 7h10v10"/></svg>
-    </a>
-    <a href="#inside" class="btn-outline">See what's inside</a>
+<!-- HOME -->
+<div class="pg vis" id="P-home">
+<section class="hero">
+  <div class="hb an d1"><span class="dot"></span>Updated for 2026/27 Tax Year</div>
+  <h1 class="an d2">Self-employed tax,<br><em>sorted</em></h1>
+  <p class="hs an d3">Four professional Excel templates built for UK sole traders and landlords. HMRC-ready, MTD-aligned, and designed to save you hours every quarter.</p>
+  <div class="hc an d4">
+    <button class="bp" onclick="go('home','templates')">Explore Templates <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M7 7h10v10"/></svg></button>
+    <button class="bo" onclick="go('home','inside')">See what's inside</button>
   </div>
 </section>
-
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat-item animate delay-3">
-    <div class="stat-number">4</div>
-    <div class="stat-label">Templates</div>
+<div class="sb">
+  <div class="si an d3"><div class="sn">4</div><div class="slb">Templates</div></div>
+  <div class="si an d4"><div class="sn">32</div><div class="slb">Worksheets</div></div>
+  <div class="si an d5"><div class="sn">100%</div><div class="slb">HMRC Aligned</div></div>
+  <div class="si an d6"><div class="sn">0</div><div class="slb">Macros Required</div></div>
+</div>
+<section id="templates"><div class="ct">
+  <div class="sl">// The Toolkit</div>
+  <div class="st">Four templates. Every tax scenario covered.</div>
+  <p class="sd">Each workbook is self-contained, formula-driven, and ready to use. No macros, no add-ins, no nonsense.</p>
+  <div class="tg">
+    <div class="tc cg" onclick="go('mtd')"><div class="al"></div><div class="th"><div class="ti"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div><div class="ts">12 sheets</div></div><div class="tb"><h3>MTD Quarterly Tracker</h3><p class="td">Complete Making Tax Digital income & expense tracker with quarterly submission packs, receipt logging, bank reconciliation, and data quality checks.</p></div><div class="tf"><span class="ft">Income & Expense Logs</span><span class="ft">Quarterly Summaries</span><span class="ft">Submission Pack</span><span class="ft">Receipt Tracker</span><span class="ft">Reconciliation</span><span class="ft">Dashboard</span></div><div class="tfo"><div class="tp">£5.99 <span>one-time</span></div><span class="ta">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div></div>
+    <div class="tc cb" onclick="go('mil')"><div class="al"></div><div class="th"><div class="ti"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="ts">9 sheets</div></div><div class="tb"><h3>UK Mileage Tracker</h3><p class="td">HMRC-compliant mileage log using simplified expenses. Save routes, manage vehicles, auto-calculate claims at 45p/25p rates.</p></div><div class="tf"><span class="ft">Mileage Log</span><span class="ft">Saved Routes</span><span class="ft">Vehicle Register</span><span class="ft">HMRC Rates</span><span class="ft">Exception Flags</span></div><div class="tfo"><div class="tp">£1.99 <span>one-time</span></div><span class="ta">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div></div>
+    <div class="tc ca" onclick="go('poa')"><div class="al"></div><div class="th"><div class="ti"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="ts">6 sheets</div></div><div class="tb"><h3>Payments on Account Planner</h3><p class="td">Estimate your full tax bill, see what you owe on each date, and get a month-by-month saving plan.</p></div><div class="tf"><span class="ft">Tax Breakdown</span><span class="ft">Payment Timeline</span><span class="ft">Monthly Saving Plan</span><span class="ft">2026/27 Rates</span></div><div class="tfo"><div class="tp">£1.99 <span>one-time</span></div><span class="ta">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div></div>
+    <div class="tc cx" onclick="go('lan')"><div class="al"></div><div class="th"><div class="ti"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="ts">5 sheets</div></div><div class="tb"><h3>Landlord Property Tracker</h3><p class="td">Multi-property portfolio tracker aligned to SA105. Log rent and expenses, see profitability, export year-end figures.</p></div><div class="tf"><span class="ft">Property Register</span><span class="ft">Transaction Log</span><span class="ft">Portfolio Dashboard</span><span class="ft">SA105 Summary</span></div><div class="tfo"><div class="tp">£2.99 <span>one-time</span></div><span class="ta">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div></div>
   </div>
-  <div class="stat-item animate delay-4">
-    <div class="stat-number">32</div>
-    <div class="stat-label">Worksheets</div>
-  </div>
-  <div class="stat-item animate delay-5">
-    <div class="stat-number">100%</div>
-    <div class="stat-label">HMRC Aligned</div>
-  </div>
-  <div class="stat-item animate delay-6">
-    <div class="stat-number">0</div>
-    <div class="stat-label">Macros Required</div>
-  </div>
+</div></section>
+<section><div class="ct"><div class="sl">// Why These Templates</div><div class="st">Built by someone who actually does the filing</div><div class="fr"><div class="fc"><span class="fi">⚡</span><h4>Zero setup time</h4><p>Open it, fill in the cream cells, and you're tracking. Quick-start guides walk you through in under 10 minutes.</p></div><div class="fc"><span class="fi">🔒</span><h4>Formula-only — no macros</h4><p>Native Excel formulas. No VBA, no security warnings. Works in Excel, Google Sheets, and LibreOffice.</p></div><div class="fc"><span class="fi">🏛️</span><h4>HMRC-aligned</h4><p>MTD quarterly periods, SA105 box numbers, simplified mileage rates, correct 2026/27 tax bands.</p></div><div class="fc"><span class="fi">🛡️</span><h4>Audit-ready records</h4><p>Receipt tracking, data quality flags, exception reports, and reconciliation sheets built in.</p></div><div class="fc"><span class="fi">📊</span><h4>Dashboards included</h4><p>YTD profit, tax to set aside, missing receipts, flagged entries — all auto-calculated.</p></div></div></div></section>
+<section id="inside"><div class="ct"><div class="sl">// What's Inside</div><div class="st">32 worksheets across the full toolkit</div><p class="sd">From daily logging to year-end summaries, every step is covered.</p><div class="ig"><div class="ic"><div class="in">12</div><h5>MTD Tracker</h5><p>Income, Expenses, Summaries, Dashboard, Submission Packs, Receipt Tracker, Reconciliation.</p></div><div class="ic"><div class="in">9</div><h5>Mileage Tracker</h5><p>Mileage Log, Saved Routes, Vehicle Register, HMRC Rules, Quarterly & Annual Summaries.</p></div><div class="ic"><div class="in">6</div><h5>POA Planner</h5><p>Your Details, Tax Breakdown, What You Owe, Saving Plan, Tax Rates reference.</p></div><div class="ic"><div class="in">5</div><h5>Landlord Tracker</h5><p>Property Register, Transaction Log, Dashboard, SA105 Summary.</p></div><div class="ic"><div class="in">4</div><h5>Dashboards</h5><p>Every template includes an auto-calculating financial overview.</p></div><div class="ic"><div class="in">∞</div><h5>Rows</h5><p>No limits. Log as many transactions as your business needs.</p></div></div></div></section>
+<section><div class="cs" style="text-align:center"><div class="sl">// Built for Real Businesses</div><div class="tq">I used to dread January. Now I just open the spreadsheet, check the submission pack, and I'm done in twenty minutes.</div><div class="tt"><strong>— Freelance consultant, Bristol</strong> · MTD Quarterly Tracker user</div></div></section>
+<section id="cta"><div class="ct"><div class="cx2"><h2>Get the full bundle<br>and save nearly 50%</h2><p>All four templates. Updated for 2026/27 with correct rates, thresholds, and quarter dates.</p><div class="cb2"><a href="#etsy-bundle-link" class="be" style="font-size:.92rem;padding:14px 36px">Buy Bundle on Etsy — £6.99</a><button class="bo" onclick="go('home','templates')" style="font-size:.92rem;padding:14px 36px">Or buy individually</button></div></div></div></section>
 </div>
 
-<!-- TEMPLATES -->
-<section id="templates">
-  <div class="container">
-    <div class="section-label animate">// The Toolkit</div>
-    <div class="section-title animate delay-1">Four templates. Every tax scenario covered.</div>
-    <p class="section-desc animate delay-2">Each workbook is self-contained, formula-driven, and ready to use the moment you open it. No macros, no add-ins, no nonsense.</p>
+<!-- MTD -->
+<div class="pg" id="P-mtd"><div class="ph"><div class="ct"><div class="bc"><button onclick="go('home')">Home</button><span>→</span><button onclick="go('home','templates')">Templates</button><span>→</span> MTD Quarterly Tracker</div><h1>MTD Quarterly<br><em>Income & Expense Tracker</em></h1><p class="hs">The complete MTD bookkeeping workbook for UK sole traders. Track every penny, reconcile your bank, and generate submission-ready figures every quarter.</p><div class="dm"><div class="dmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>12 worksheets</div><div class="dmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>2026/27</div><div class="dmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>MTD-ready</div></div></div></div><div class="dc"><div><div class="sl">// What's Included</div><h2 class="st" style="font-size:1.8rem">Every sheet in the workbook</h2><ul class="sls"><li><span class="snm">01</span><div class="sinf"><strong>Welcome</strong><span>Quick-start guide — 6 steps to get running</span></div></li><li><span class="snm">02</span><div class="sinf"><strong>Setup</strong><span>Business name, UTR, NI, accounting basis, VAT scheme</span></div></li><li><span class="snm">03</span><div class="sinf"><strong>Income</strong><span>Full log with auto VAT, net amounts, payment tracking</span></div></li><li><span class="snm">04</span><div class="sinf"><strong>Expenses</strong><span>Allowable/private splits, categories, receipt refs</span></div></li><li><span class="snm">05</span><div class="sinf"><strong>Quarterly Summary</strong><span>Income, expenses, profit, submission deadline</span></div></li><li><span class="snm">06</span><div class="sinf"><strong>Annual Summary</strong><span>Full-year totals with estimated tax and NI</span></div></li><li><span class="snm">07</span><div class="sinf"><strong>Dashboard</strong><span>YTD income, expenses, profit, tax to set aside</span></div></li><li><span class="snm">08</span><div class="sinf"><strong>Submission Pack</strong><span>Print-ready figures for MTD software</span></div></li><li><span class="snm">09</span><div class="sinf"><strong>Receipt Tracker</strong><span>Cross-reference receipts to transactions</span></div></li><li><span class="snm">10</span><div class="sinf"><strong>Reconciliation</strong><span>Monthly bank reconciliation</span></div></li><li><span class="snm">11</span><div class="sinf"><strong>Checks & Flags</strong><span>Automated data quality checks</span></div></li><li><span class="snm">12</span><div class="sinf"><strong>Lists</strong><span>All dropdowns — categories, methods, accounts</span></div></li></ul></div><div><div class="sbar"><h3>MTD Quarterly Tracker</h3><p style="font-size:.85rem;color:var(--txd)">2026/27 · Excel (.xlsx)</p><div class="sp">£5.99 <span>one-time</span></div><ul><li>12 professional worksheets</li><li>MTD quarters pre-set</li><li>Auto-calculated VAT & tax</li><li>Submission-ready figures</li><li>Bank reconciliation</li><li>Works in Excel, Sheets & Libre</li><li>No macros needed</li></ul><div class="scta"><a href="#etsy-mtd-link" class="be">Buy on Etsy — £5.99</a><button class="bo" onclick="go('home','cta')">Or get the bundle — £6.99</button></div><p class="snt">Instant digital download via Etsy.</p></div></div></div></div>
 
-    <div class="templates-grid">
+<!-- MILEAGE -->
+<div class="pg" id="P-mil"><div class="ph"><div class="ct"><div class="bc"><button onclick="go('home')">Home</button><span>→</span><button onclick="go('home','templates')">Templates</button><span>→</span> UK Mileage Tracker</div><h1>UK Mileage<br><em>Tracker</em></h1><p class="hs">HMRC-compliant mileage records using simplified flat-rate expenses. Save routes, manage vehicles, auto-calculate the 45p/25p threshold.</p><div class="dm"><div class="dmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>9 worksheets</div><div class="dmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>2026/27</div><div class="dmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>HMRC simplified</div></div></div></div><div class="dc"><div><div class="sl">// What's Included</div><h2 class="st" style="font-size:1.8rem">Every sheet in the workbook</h2><ul class="sls"><li><span class="snm">01</span><div class="sinf"><strong>Welcome</strong><span>Dashboard — miles, claim value, threshold tracker</span></div></li><li><span class="snm">02</span><div class="sinf"><strong>Quick Start</strong><span>Setup guide — vehicles, routes, first journey</span></div></li><li><span class="snm">03</span><div class="sinf"><strong>Mileage Log</strong><span>Journey log with saved route auto-fill and claim values</span></div></li><li><span class="snm">04</span><div class="sinf"><strong>Saved Routes</strong><span>Pre-save regular journeys with verified distances</span></div></li><li><span class="snm">05</span><div class="sinf"><strong>Vehicles</strong><span>Register — type, eligibility, mileage status</span></div></li><li><span class="snm">06</span><div class="sinf"><strong>HMRC Rules</strong><span>45p / 25p / 24p motorcycle rates</span></div></li><li><span class="snm">07</span><div class="sinf"><strong>Quarter Summary</strong><span>Quarterly miles, journeys, claim value</span></div></li><li><span class="snm">08</span><div class="sinf"><strong>Tax Year Summary</strong><span>Annual totals with per-vehicle analysis</span></div></li><li><span class="snm">09</span><div class="sinf"><strong>Exceptions</strong><span>Flagged entries to resolve before filing</span></div></li></ul></div><div><div class="sbar"><h3>UK Mileage Tracker</h3><p style="font-size:.85rem;color:var(--txd)">2026/27 · Excel (.xlsx)</p><div class="sp">£1.99 <span>one-time</span></div><ul><li>9 professional worksheets</li><li>HMRC 45p/25p rates built in</li><li>Saved routes auto-fill</li><li>Multi-vehicle support</li><li>Quarterly + annual summaries</li><li>Exception flagging</li><li>No macros needed</li></ul><div class="scta"><a href="#etsy-mileage-link" class="be">Buy on Etsy — £1.99</a><button class="bo" onclick="go('home','cta')">Or get the bundle — £6.99</button></div><p class="snt">Instant digital download via Etsy.</p></div></div></div></div>
 
-      <a href="templates/mtd-quarterly-tracker.html" class="template-card card-green animate delay-3">
-        <div class="card-accent-line"></div>
-        <div class="card-header">
-          <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-          </div>
-          <div class="card-sheets-badge">12 sheets</div>
-        </div>
-        <div class="card-body">
-          <h3>MTD Quarterly Tracker</h3>
-          <p class="card-desc">Complete Making Tax Digital income and expense tracker with quarterly submission packs, receipt logging, bank reconciliation, and built-in data quality checks.</p>
-        </div>
-        <div class="card-features">
-          <span class="feature-tag">Income & Expense Logs</span>
-          <span class="feature-tag">Quarterly Summaries</span>
-          <span class="feature-tag">Submission Pack</span>
-          <span class="feature-tag">Receipt Tracker</span>
-          <span class="feature-tag">Reconciliation</span>
-          <span class="feature-tag">Dashboard</span>
-        </div>
-        <div class="card-footer">
-          <div class="card-price">£5.99 <span>one-time</span></div>
-          <span class="card-cta">
-            View Details
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </span>
-        </div>
-      </a>
+<!-- POA -->
+<div class="pg" id="P-poa"><div class="ph"><div class="ct"><div class="bc"><button onclick="go('home')">Home</button><span>→</span><button onclick="go('home','templates')">Templates</button><span>→</span> POA Tax Planner</div><h1>Payments on Account<br><em>Tax Planner</em></h1><p class="hs">Know what you owe, when it's due, and how much to save each month. No more January panic.</p><div class="dm"><div class="dmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>6 worksheets</div><div class="dmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>2026/27</div><div class="dmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Tax + NI + POA</div></div></div></div><div class="dc"><div><div class="sl">// What's Included</div><h2 class="st" style="font-size:1.8rem">Every sheet in the workbook</h2><ul class="sls"><li><span class="snm">01</span><div class="sinf"><strong>Welcome</strong><span>Dashboard — estimated tax, due dates, savings progress</span></div></li><li><span class="snm">02</span><div class="sinf"><strong>Your Details</strong><span>Turnover, expenses, previous year's tax bill</span></div></li><li><span class="snm">03</span><div class="sinf"><strong>Tax Breakdown</strong><span>Profit, income tax by band, Class 2 & 4 NI</span></div></li><li><span class="snm">04</span><div class="sinf"><strong>What You Owe</strong><span>Full payment timeline — POAs, balancing, next year</span></div></li><li><span class="snm">05</span><div class="sinf"><strong>Saving Plan</strong><span>Month-by-month targets for January and July</span></div></li><li><span class="snm">06</span><div class="sinf"><strong>Tax Rates</strong><span>2026/27 bands, NI thresholds, personal allowance</span></div></li></ul></div><div><div class="sbar"><h3>POA Tax Planner</h3><p style="font-size:.85rem;color:var(--txd)">2026/27 · Excel (.xlsx)</p><div class="sp">£1.99 <span>one-time</span></div><ul><li>6 professional worksheets</li><li>Full tax calculation engine</li><li>POA payment timeline</li><li>Monthly saving plan</li><li>2026/27 rates pre-loaded</li><li>Higher rate tapering</li><li>No macros needed</li></ul><div class="scta"><a href="#etsy-poa-link" class="be">Buy on Etsy — £1.99</a><button class="bo" onclick="go('home','cta')">Or get the bundle — £6.99</button></div><p class="snt">Instant digital download via Etsy.</p></div></div></div></div>
 
-      <a href="templates/mileage-tracker.html" class="template-card card-blue animate delay-4">
-        <div class="card-accent-line"></div>
-        <div class="card-header">
-          <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="card-sheets-badge">9 sheets</div>
-        </div>
-        <div class="card-body">
-          <h3>UK Mileage Tracker</h3>
-          <p class="card-desc">HMRC-compliant mileage log using simplified expenses. Save regular routes, manage multiple vehicles, and auto-calculate claims at 45p/25p rates with quarterly breakdowns.</p>
-        </div>
-        <div class="card-features">
-          <span class="feature-tag">Mileage Log</span>
-          <span class="feature-tag">Saved Routes</span>
-          <span class="feature-tag">Vehicle Register</span>
-          <span class="feature-tag">HMRC Rates Built-in</span>
-          <span class="feature-tag">Exception Flags</span>
-        </div>
-        <div class="card-footer">
-          <div class="card-price">£1.99 <span>one-time</span></div>
-          <span class="card-cta">
-            View Details
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </span>
-        </div>
-      </a>
+<!-- LANDLORD -->
+<div class="pg" id="P-lan"><div class="ph"><div class="ct"><div class="bc"><button onclick="go('home')">Home</button><span>→</span><button onclick="go('home','templates')">Templates</button><span>→</span> Landlord Property Tracker</div><h1>Landlord Property<br><em>Tracker for SA105</em></h1><p class="hs">Manage your rental portfolio in one workbook. Every transaction maps to SA105 boxes.</p><div class="dm"><div class="dmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>5 worksheets</div><div class="dmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>2026/27</div><div class="dmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>SA105 mapped</div></div></div></div><div class="dc"><div><div class="sl">// What's Included</div><h2 class="st" style="font-size:1.8rem">Every sheet in the workbook</h2><ul class="sls"><li><span class="snm">01</span><div class="sinf"><strong>Instructions</strong><span>Setup guide — properties, transactions, SA105</span></div></li><li><span class="snm">02</span><div class="sinf"><strong>Setup</strong><span>Property register with tenant, rent, mortgage, categories</span></div></li><li><span class="snm">03</span><div class="sinf"><strong>Transaction Log</strong><span>All income & expenses with auto SA105 box assignment</span></div></li><li><span class="snm">04</span><div class="sinf"><strong>Dashboard</strong><span>Portfolio overview — income, expenses, profit per property</span></div></li><li><span class="snm">05</span><div class="sinf"><strong>SA105 Summary</strong><span>Year-end figures mapped to Box 5, 6, 7, 8</span></div></li></ul><div style="margin-top:48px"><div class="sl">// SA105 Boxes Covered</div><div class="fr" style="margin-top:24px"><div class="fc" style="min-width:140px"><span class="fi" style="font-size:1.2rem">📥</span><h4 style="font-size:1rem">Box 5</h4><p>Rent & property income</p></div><div class="fc" style="min-width:140px"><span class="fi" style="font-size:1.2rem">🔧</span><h4 style="font-size:1rem">Box 6</h4><p>Repairs, insurance, services</p></div><div class="fc" style="min-width:140px"><span class="fi" style="font-size:1.2rem">🏦</span><h4 style="font-size:1rem">Box 7</h4><p>Loan interest & finance</p></div><div class="fc" style="min-width:140px"><span class="fi" style="font-size:1.2rem">⚖️</span><h4 style="font-size:1rem">Box 8</h4><p>Legal & professional fees</p></div></div></div></div><div><div class="sbar"><h3>Landlord Property Tracker</h3><p style="font-size:.85rem;color:var(--txd)">2026/27 · Excel (.xlsx)</p><div class="sp">£2.99 <span>one-time</span></div><ul><li>5 professional worksheets</li><li>Multi-property support</li><li>SA105 box mapping</li><li>Per-property profitability</li><li>Quarterly breakdowns</li><li>Finance cost separation</li><li>No macros needed</li></ul><div class="scta"><a href="#etsy-landlord-link" class="be">Buy on Etsy — £2.99</a><button class="bo" onclick="go('home','cta')">Or get the bundle — £6.99</button></div><p class="snt">Instant digital download via Etsy.</p></div></div></div></div>
 
-      <a href="templates/poa-tax-planner.html" class="template-card card-amber animate delay-5">
-        <div class="card-accent-line"></div>
-        <div class="card-header">
-          <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <div class="card-sheets-badge">6 sheets</div>
-        </div>
-        <div class="card-body">
-          <h3>Payments on Account Planner</h3>
-          <p class="card-desc">Estimate your full tax bill, see exactly what you owe on each date, and get a month-by-month saving plan so January and July never catch you off guard.</p>
-        </div>
-        <div class="card-features">
-          <span class="feature-tag">Tax Breakdown</span>
-          <span class="feature-tag">Payment Timeline</span>
-          <span class="feature-tag">Monthly Saving Plan</span>
-          <span class="feature-tag">2026/27 Rates</span>
-        </div>
-        <div class="card-footer">
-          <div class="card-price">£1.99 <span>one-time</span></div>
-          <span class="card-cta">
-            View Details
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </span>
-        </div>
-      </a>
+<!-- ABOUT -->
+<div class="pg" id="P-about"><div class="ph"><div class="ct"><div class="bc"><button onclick="go('home')">Home</button><span>→</span> About</div><h1>Built for the people<br><em>HMRC forgot</em></h1><p class="hs">Practical, no-nonsense Excel templates for UK self-employed workers and landlords.</p></div></div><section style="padding-top:20px"><div class="ct"><div class="ag"><div class="ac"><h3>Why we built this</h3><p>HMRC tells you to "keep records" but doesn't give you a tool. Most people end up with a messy spreadsheet and a panicked January evening.</p><p style="margin-top:14px">We built the templates we wanted — workbooks that handle HMRC structure, auto-calculate figures, and flag problems before they cost you money.</p></div><div class="ac"><h3>Who it's for</h3><p>UK sole traders, freelancers, contractors, and landlords who want organised tax records without accounting software.</p><p style="margin-top:14px">If you're comfortable with Excel and want something with correct HMRC rates and MTD quarter dates baked in — this is for you.</p></div></div><div class="av"><div class="vc"><span class="vi">📐</span><h4>Accuracy first</h4><p>Every rate checked against official HMRC guidance. Updated each tax year.</p></div><div class="vc"><span class="vi">🧹</span><h4>No bloat</h4><p>No macros, no VBA. Pure formulas that work everywhere.</p></div><div class="vc"><span class="vi">🤝</span><h4>Honest pricing</h4><p>One-time purchase, no subscriptions. Less than a takeaway coffee.</p></div></div></div></section></div>
 
-      <a href="templates/landlord-property-tracker.html" class="template-card card-teal animate delay-6">
-        <div class="card-accent-line"></div>
-        <div class="card-header">
-          <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <div class="card-sheets-badge">5 sheets</div>
-        </div>
-        <div class="card-body">
-          <h3>Landlord Property Tracker</h3>
-          <p class="card-desc">Multi-property portfolio tracker aligned to SA105 tax return boxes. Log every rent payment and expense, see per-property profitability, and export year-end figures ready for filing.</p>
-        </div>
-        <div class="card-features">
-          <span class="feature-tag">Property Register</span>
-          <span class="feature-tag">Transaction Log</span>
-          <span class="feature-tag">Portfolio Dashboard</span>
-          <span class="feature-tag">SA105 Summary</span>
-        </div>
-        <div class="card-footer">
-          <div class="card-price">£2.99 <span>one-time</span></div>
-          <span class="card-cta">
-            View Details
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </span>
-        </div>
-      </a>
+<!-- FAQ -->
+<div class="pg" id="P-faq"><div class="ph"><div class="cs"><div class="bc"><button onclick="go('home')">Home</button><span>→</span> FAQ</div><h1>Frequently asked<br><em>questions</em></h1><p class="hs">Everything you need to know about our templates.</p></div></div><section style="padding-top:0"><div class="cs">
+<div class="sl">// General</div><div class="fqi"><button class="fqq">What do I get when I purchase?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">An instant digital download via Etsy containing an Excel workbook (.xlsx). Each template is a single file with multiple worksheets.</div></div></div><div class="fqi"><button class="fqq">Which tax year?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">All templates are for 2026/27 (6 April 2026 – 5 April 2027). Quarter dates, deadlines, tax bands, NI thresholds, and mileage rates are pre-set.</div></div></div><div class="fqi"><button class="fqq">Bundle vs individual?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">Same files either way. Individually they total £12.96; the bundle is £6.99. If you need two or more, the bundle is better value.</div></div></div><div class="fqi"><button class="fqq">Suitable for limited companies?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">No — these are for sole traders and individual landlords filing Self Assessment. Limited companies have different requirements.</div></div></div>
+<div class="sl" style="margin-top:60px">// Compatibility</div><div class="fqi"><button class="fqq">Google Sheets compatible?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">Yes. Standard Excel formulas only — no macros. Opens directly in Google Sheets and calculates correctly.</div></div></div><div class="fqi"><button class="fqq">Do I need Microsoft Excel?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">No. Works in Excel, Google Sheets, LibreOffice Calc, Apple Numbers, and WPS Office.</div></div></div><div class="fqi"><button class="fqq">Any macros?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">None. 100% formula-driven. No VBA, no add-ins, no security warnings.</div></div></div>
+<div class="sl" style="margin-top:60px">// Using the Templates</div><div class="fqi"><button class="fqq">How do I know which cells to fill in?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">Cream cells = your input, white cells = auto-calculated. Each workbook has a Welcome/Quick Start guide.</div></div></div><div class="fqi"><button class="fqq">Can I customise categories?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">Yes. The MTD Tracker has a Lists sheet; the Landlord Tracker has editable categories on Setup. Changes appear everywhere.</div></div></div><div class="fqi"><button class="fqq">Replacement for an accountant?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">No. These help you keep organised records and estimate tax. For complex situations, always consult a qualified accountant.</div></div></div>
+<div class="sl" style="margin-top:60px">// Purchase</div><div class="fqi"><button class="fqq">How do I download?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">Etsy sends a download link after purchase. Also available anytime at Etsy → Purchases & Reviews → Download Files.</div></div></div><div class="fqi"><button class="fqq">Found an error?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">Message us on Etsy. We'll fix it and send an updated file promptly.</div></div></div><div class="fqi"><button class="fqq">Can I share with others?<span class="fqic">+</span></button><div class="fqa"><div class="fqai">Single-user licence. Use across your own devices, but please don't redistribute. At these prices, it's an easy ask!</div></div></div>
+</div></section></div>
 
-    </div>
-  </div>
-</section>
+<footer><div class="fin"><div class="fbr"><a class="logo" onclick="go('home')" style="cursor:pointer"><div class="lm">£</div>FinanceToolsUK</a><p>Professional Excel templates for UK self-employed tax. Not financial advice.</p></div><div class="fco"><h5>Templates</h5><button onclick="go('mtd')">MTD Quarterly Tracker</button><button onclick="go('mil')">Mileage Tracker</button><button onclick="go('poa')">POA Tax Planner</button><button onclick="go('lan')">Landlord Property Tracker</button></div><div class="fco"><h5>Company</h5><button onclick="go('about')">About</button><button onclick="go('faq')">FAQ</button></div><div class="fco"><h5>Shop</h5><a href="#etsy-store-link">Etsy Store</a><a href="#etsy-bundle-link">Get the Bundle</a></div></div><div class="fbt"><span>© 2026 FinanceToolsUK</span><span>2026/27 tax year</span></div></footer>
 
-<!-- FEATURES -->
-<section id="features">
-  <div class="container">
-    <div class="section-label animate">// Why These Templates</div>
-    <div class="section-title animate delay-1">Built by someone who actually does the filing</div>
-
-    <div class="features-row">
-      <div class="feature-card animate delay-2">
-        <span class="feat-icon">⚡</span>
-        <h4>Zero setup time</h4>
-        <p>Open it, fill in the cream cells, and you're tracking. Quick-start guides on every workbook walk you through in under 10 minutes.</p>
-      </div>
-      <div class="feature-card animate delay-3">
-        <span class="feat-icon">🔒</span>
-        <h4>Formula-only — no macros</h4>
-        <p>Every calculation uses native Excel formulas. No VBA, no macros to enable, no security warnings. Works in Excel, Google Sheets, and LibreOffice.</p>
-      </div>
-      <div class="feature-card animate delay-4">
-        <span class="feat-icon">🏛️</span>
-        <h4>HMRC-aligned</h4>
-        <p>Built around actual HMRC rules: MTD quarterly periods, SA105 box numbers, simplified mileage rates, and correct tax bands for 2026/27.</p>
-      </div>
-      <div class="feature-card animate delay-5">
-        <span class="feat-icon">🛡️</span>
-        <h4>Audit-ready records</h4>
-        <p>Receipt tracking, data quality flags, exception reports, and reconciliation sheets. If HMRC come knocking, your records are already in order.</p>
-      </div>
-      <div class="feature-card animate delay-6">
-        <span class="feat-icon">📊</span>
-        <h4>Dashboards included</h4>
-        <p>Every workbook features at-a-glance summaries — YTD profit, tax to set aside, missing receipts, flagged entries — all auto-calculated.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT'S INSIDE -->
-<section id="inside">
-  <div class="container">
-    <div class="section-label animate">// What's Inside</div>
-    <div class="section-title animate delay-1">32 worksheets across the full toolkit</div>
-    <p class="section-desc animate delay-2">From daily transaction logging to year-end submission summaries, every step of the UK self-employed tax workflow is covered.</p>
-
-    <div class="inside-grid">
-      <div class="inside-cell animate delay-3">
-        <div class="cell-num">12</div>
-        <h5>MTD Tracker Sheets</h5>
-        <p>Income, Expenses, Quarterly & Annual Summaries, Dashboard, Submission Packs, Receipt Tracker, Reconciliation, and more.</p>
-      </div>
-      <div class="inside-cell animate delay-4">
-        <div class="cell-num">9</div>
-        <h5>Mileage Tracker Sheets</h5>
-        <p>Mileage Log, Saved Routes, Vehicle Register, HMRC Rules reference, Quarterly & Tax Year Summaries, and Exception reports.</p>
-      </div>
-      <div class="inside-cell animate delay-5">
-        <div class="cell-num">6</div>
-        <h5>POA Planner Sheets</h5>
-        <p>Your Details, Tax Breakdown, What You Owe timeline, Monthly Saving Plan, and full 2026/27 Tax Rates reference.</p>
-      </div>
-      <div class="inside-cell animate delay-6">
-        <div class="cell-num">5</div>
-        <h5>Landlord Tracker Sheets</h5>
-        <p>Property Register, Transaction Log, Portfolio Dashboard, and SA105 year-end summary mapped to HMRC boxes.</p>
-      </div>
-      <div class="inside-cell animate delay-7">
-        <div class="cell-num">4</div>
-        <h5>Built-in Dashboards</h5>
-        <p>Every template includes an auto-calculating overview — income vs expenses, tax reserves, missing receipts, and mileage thresholds.</p>
-      </div>
-      <div class="inside-cell animate delay-8">
-        <div class="cell-num">∞</div>
-        <h5>Transaction Rows</h5>
-        <p>No artificial limits. Log as many transactions, journeys, receipts, and properties as your business needs.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST -->
-<section>
-  <div class="container-sm" style="text-align:center;">
-    <div class="section-label animate">// Built for Real Businesses</div>
-    <div class="trust-quote animate delay-1">
-      I used to dread January. Now I just open the spreadsheet, check the submission pack, and I'm done in twenty minutes.
-    </div>
-    <div class="trust-attribution animate delay-2">
-      <strong>— Freelance consultant, Bristol</strong> · MTD Quarterly Tracker user
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="cta">
-  <div class="container">
-    <div class="cta-box animate">
-      <h2>Get the full bundle<br>and save nearly 50%</h2>
-      <p>All four templates in one download. Updated for the 2026/27 tax year with correct rates, thresholds, and quarter dates.</p>
-      <div class="cta-buttons">
-        <a href="#etsy-bundle-link" class="btn-etsy" style="font-size:0.92rem; padding:14px 36px;">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.16 4.23c0-.45.54-.45.54-.45h1.67c.55 0 .55.45.55.45v4.26c0 .55.44.55.44.55h3.53s.23 0 .23.44v1.46s0 .44-.23.44h-3.53s-.44 0-.44.55v4.82c0 .67.22 1.34.89 1.34h2.86s.44 0 .44.44v1.46s0 .44-.44.44H8.6s-.44 0-.44-.44v-1.46s0-.44.44-.44h1.45c.22 0 .22-.22.22-.22V11.93s0-.44-.55-.44H8.05s-.44 0-.44-.44V9.6s0-.44.44-.44h1.67s.55 0 .55-.55V4.23z"/></svg>
-          Buy Bundle on Etsy — £6.99
-        </a>
-        <a href="#templates" class="btn-outline" style="font-size:0.92rem; padding:14px 36px;">
-          Or buy individually
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" class="logo">
-        <div class="logo-mark">£</div>
-        FinanceToolsUK
-      </a>
-      <p>Professional Excel templates for UK self-employed tax. Not financial advice — always check with your accountant.</p>
-    </div>
-    <div class="footer-col">
-      <h5>Templates</h5>
-      <a href="templates/mtd-quarterly-tracker.html">MTD Quarterly Tracker</a>
-      <a href="templates/mileage-tracker.html">Mileage Tracker</a>
-      <a href="templates/poa-tax-planner.html">POA Tax Planner</a>
-      <a href="templates/landlord-property-tracker.html">Landlord Property Tracker</a>
-    </div>
-    <div class="footer-col">
-      <h5>Company</h5>
-      <a href="about.html">About</a>
-      <a href="faq.html">FAQ</a>
-    </div>
-    <div class="footer-col">
-      <h5>Shop</h5>
-      <a href="#etsy-store-link">Etsy Store</a>
-      <a href="#etsy-bundle-link">Get the Bundle</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 FinanceToolsUK. All rights reserved.</span>
-    <span>Templates for the 2026/27 tax year</span>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
+<script>
+function go(p,s){document.querySelectorAll('.pg').forEach(x=>x.classList.remove('vis'));document.getElementById('P-'+p).classList.add('vis');document.querySelectorAll('.nl button[data-p]').forEach(b=>b.classList.remove('av'));let a=document.querySelector('.nl button[data-p="'+p+'"]');if(a)a.classList.add('av');if(!s)window.scrollTo({top:0,behavior:'instant'});if(s)setTimeout(()=>{let e=document.getElementById(s);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})},50);document.getElementById('NL').classList.remove('opn')}
+document.querySelectorAll('.fqq').forEach(b=>{b.addEventListener('click',()=>{let i=b.closest('.fqi'),o=i.classList.contains('op');document.querySelectorAll('.fqi').forEach(x=>x.classList.remove('op'));if(!o)i.classList.add('op')})});
+</script>
 </body>
 </html>
