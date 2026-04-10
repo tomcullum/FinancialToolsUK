@@ -130,6 +130,7 @@ footer{padding:50px 48px 40px;border-top:1px solid var(--bd);position:relative;z
   <div class="calc-tabs">
     <button class="sel" onclick="switchCalc(this,'se')">Self-Employed Tax</button>
     <button onclick="switchCalc(this,'div')">Dividend Tax</button>
+    <button onclick="switchCalc(this,'opt')">Salary vs Dividend Optimizer</button>
   </div>
 
   <!-- SELF-EMPLOYED CALCULATOR -->
@@ -153,6 +154,36 @@ footer{padding:50px 48px 40px;border-top:1px solid var(--bd);position:relative;z
       <div class="result-grid"><div class="result-card"><h4>Class 2 National Insurance</h4><div id="seC2L"></div></div><div class="result-card"><h4>Student Loan</h4><div id="seLoanL"></div></div></div>
       <div class="result-card" style="margin-bottom:20px"><h4>Summary</h4><div id="seSumL"></div></div>
       <div class="result-cta"><p>Want to track your actual income and expenses?</p><button class="bp" onclick="go('home','templates')">Browse Our Templates</button></div>
+    </div>
+  </div>
+
+  <!-- OPTIMIZER -->
+  <div class="calc-panel" id="cpOPT">
+    <div class="calc-box">
+      <div style="background:var(--sf2);border:1px solid var(--bd);border-radius:10px;padding:14px 18px;margin-bottom:24px;font-size:.78rem;color:var(--txd);line-height:1.6"><b style="color:var(--ac)">2026/27 Tax Year</b> — This optimizer calculates the most tax-efficient way to extract profits from your limited company using a combination of salary, employer pension contributions, and dividends.</div>
+      <label>Company Gross Profit (£)</label>
+      <p class="help" style="margin-bottom:6px">Revenue minus business expenses, before salary/pension/tax</p>
+      <input type="number" id="optProfit" placeholder="e.g. 80000" min="0" style="margin-bottom:24px">
+      <div class="calc-row">
+        <div><label style="display:flex;align-items:center;justify-content:space-between">Annual Salary (£) <span style="font-size:.7rem;color:var(--txm);font-weight:500"><input type="checkbox" id="optSalLock" style="width:14px;height:14px;accent-color:var(--ac);margin-right:4px;vertical-align:middle">Lock</span></label><input type="number" id="optSal" placeholder="12570" min="0" value="12570"><p class="help">Common: £5,000 or £12,570</p></div>
+        <div><label style="display:flex;align-items:center;justify-content:space-between">Employer Pension (£) <span style="font-size:.7rem;color:var(--txm);font-weight:500"><input type="checkbox" id="optPenLock" style="width:14px;height:14px;accent-color:var(--ac);margin-right:4px;vertical-align:middle">Lock</span></label><input type="number" id="optPen" placeholder="0" min="0" value="0"><p class="help">Corp tax deductible, no NI, no income tax</p></div>
+      </div>
+      <div class="calc-actions">
+        <button class="bo" onclick="resetOpt()">Reset</button>
+        <button class="bp" style="background:var(--tl)" onclick="autoOptimize()">Auto-Optimize</button>
+        <button class="bp" onclick="tryCalc('opt')">Calculate</button>
+      </div>
+      <div class="calc-note">🔒 2026/27 rates: Corp Tax 19%/25% · Employer NI 15% above £5k · Dividend 10.75%/35.75%/39.35%</div>
+    </div>
+    <div class="calc-results" id="optResults">
+      <div class="result-hero"><div class="rlab">Total Take-Home Pay</div><div class="rval" id="optTH">£0</div><div class="rsub">Total tax: <b id="optTotalTax">£0</b> · Effective rate: <b id="optEffRate">0%</b></div></div>
+      <div class="result-grid">
+        <div class="result-card"><h4>Company Level Tax</h4><div id="optCorpL"></div></div>
+        <div class="result-card"><h4>Personal Tax</h4><div id="optPersL"></div></div>
+      </div>
+      <div class="result-card" style="margin-bottom:20px"><h4>Full Breakdown</h4><div id="optSumL"></div></div>
+      <div class="result-card" style="margin-bottom:20px"><h4>Why This Split?</h4><div id="optExplain" style="font-size:.85rem;color:var(--txd);line-height:1.7"></div></div>
+      <div class="result-cta"><p>Need to track your company finances throughout the year?</p><button class="bp" onclick="go('home','templates')">Browse Our Templates</button></div>
     </div>
   </div>
 
@@ -223,10 +254,10 @@ let seTY='2025',seReg='uk',divTY='2025',pendingCalc=null;
 const fmt=v=>'£'+v.toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2});
 
 function setV(btn,k,v){window[k]=v;btn.parentNode.querySelectorAll('button').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');if(k==='divTY')updateDivNote()}
-function switchCalc(btn,t){document.querySelectorAll('.calc-tabs button').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');document.querySelectorAll('.calc-panel').forEach(p=>p.classList.remove('vis'));document.getElementById(t==='se'?'cpSE':'cpDIV').classList.add('vis')}
+function switchCalc(btn,t){document.querySelectorAll('.calc-tabs button').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');document.querySelectorAll('.calc-panel').forEach(p=>p.classList.remove('vis'));document.getElementById(t==='se'?'cpSE':t==='div'?'cpDIV':'cpOPT').classList.add('vis')}
 function tryCalc(type){pendingCalc=type;document.getElementById('eModal').classList.add('show')}
-function submitEmail(){let em=document.getElementById('eEmail').value.trim();if(!em||!em.includes('@')){alert('Please enter a valid email.');return}console.log('Email captured:',em);document.getElementById('eModal').classList.remove('show');if(pendingCalc==='se')runSE();else runDiv()}
-function skipEmail(){document.getElementById('eModal').classList.remove('show');if(pendingCalc==='se')runSE();else runDiv()}
+function submitEmail(){let em=document.getElementById('eEmail').value.trim();if(!em||!em.includes('@')){alert('Please enter a valid email.');return}console.log('Email captured:',em);document.getElementById('eModal').classList.remove('show');if(pendingCalc==='se')runSE();else if(pendingCalc==='div')runDiv();else runOpt()}
+function skipEmail(){document.getElementById('eModal').classList.remove('show');if(pendingCalc==='se')runSE();else if(pendingCalc==='div')runDiv();else runOpt()}
 
 // TAX RATES
 const RATES={
@@ -397,6 +428,197 @@ function runDiv(){
   document.getElementById('divResults').classList.add('show');setTimeout(()=>document.getElementById('divResults').scrollIntoView({behavior:'smooth'}),100);
 }
 updateDivNote();
+
+// SALARY VS DIVIDEND OPTIMIZER (2026/27)
+function corpTax(profit){
+  if(profit<=0)return 0;
+  if(profit<=50000)return profit*.19;
+  if(profit>=250000)return profit*.25;
+  return profit*.25-(250000-profit)*3/200;
+}
+
+function calcOpt(grossProfit,salary,pension){
+  const basePa=12570,empNIthresh=5000,empNIrate=.15;
+  const empeeThresh=12570,empeeUEL=50270,empeeRate=.08,empeeRate2=.02;
+  const divAllow=500,divBasic=.1075,divHigher=.3575,divAdditional=.3935;
+  const basicBand=37700,higherBandTop=125140;
+
+  // Employer NI on salary
+  const empNI=Math.max(salary-empNIthresh,0)*empNIrate;
+  
+  // Adjusted profit after salary, employer NI, pension
+  const adjProfit=Math.max(grossProfit-salary-empNI-pension,0);
+  
+  // Corporation Tax
+  const ct=corpTax(adjProfit);
+  
+  // Distributable profit (available for dividends)
+  const distributable=Math.max(adjProfit-ct,0);
+  
+  // Total income for PA tapering (salary + dividends)
+  const totalIncome=salary+distributable;
+  
+  // Personal Allowance with tapering above £100k
+  let pa=basePa;
+  if(totalIncome>100000){pa=Math.max(basePa-Math.floor((totalIncome-100000)/2),0)}
+  
+  // Employee NI on salary
+  const empeeNI=Math.max(Math.min(salary,empeeUEL)-empeeThresh,0)*empeeRate+Math.max(salary-empeeUEL,0)*empeeRate2;
+  
+  // Income tax on salary
+  const salaryTaxable=Math.max(salary-pa,0);
+  let salTax=0;
+  if(salaryTaxable>0){
+    salTax=Math.min(salaryTaxable,basicBand)*.20;
+    let rem=Math.max(salaryTaxable-basicBand,0);
+    salTax+=Math.min(rem,higherBandTop-basePa-basicBand)*.40;
+    rem=Math.max(salaryTaxable-higherBandTop+basePa,0);
+    salTax+=rem*.45;
+  }
+  
+  // Dividend tax — allowance consumes band space (GOV.UK/ICAEW confirmed)
+  const salaryBandUsed=Math.max(salary-pa,0);
+  
+  // Place ALL dividends into bands (including allowance portion)
+  const basicLeft=Math.max(basicBand-salaryBandUsed,0);
+  const higherBandWidth=higherBandTop-basePa-basicBand;
+  const higherLeft=Math.max(higherBandWidth-Math.max(salaryBandUsed-basicBand,0),0);
+  
+  let dInBasic=Math.min(distributable,basicLeft);
+  let remDiv=distributable-dInBasic;
+  let dInHigher=Math.min(remDiv,higherLeft);
+  let dInAdditional=remDiv-dInHigher;
+  
+  // Apply £500 nil-rate allowance from lowest band up
+  let allowLeft=divAllow;
+  let basicAllow=Math.min(allowLeft,dInBasic);allowLeft-=basicAllow;
+  let higherAllow=Math.min(allowLeft,dInHigher);allowLeft-=higherAllow;
+  let additionalAllow=Math.min(allowLeft,dInAdditional);
+  
+  const divTax=(dInBasic-basicAllow)*divBasic+(dInHigher-higherAllow)*divHigher+(dInAdditional-additionalAllow)*divAdditional;
+  
+  // Totals
+  const totalTax=ct+empNI+empeeNI+salTax+divTax;
+  const netSalary=salary-salTax-empeeNI;
+  const netDividends=distributable-divTax;
+  const takeHome=netSalary+netDividends;
+  const effRate=grossProfit>0?((totalTax/grossProfit)*100).toFixed(1):'0';
+  const paTapered=pa<basePa;
+  
+  return{ct,empNI,empeeNI,salTax,divTax,totalTax,salary,pension,distributable,netSalary,netDividends,takeHome,effRate,adjProfit,pa,paTapered};
+}
+
+function resetOpt(){
+  document.getElementById('optProfit').value='';
+  document.getElementById('optSal').value='12570';
+  document.getElementById('optPen').value='0';
+  document.getElementById('optResults').classList.remove('show');
+}
+
+function autoOptimize(){
+  const gp=parseFloat(document.getElementById('optProfit').value)||0;
+  if(gp<=0){alert('Please enter company gross profit.');return}
+  
+  const salLocked=document.getElementById('optSalLock').checked;
+  const penLocked=document.getElementById('optPenLock').checked;
+  const lockedSal=parseFloat(document.getElementById('optSal').value)||0;
+  const lockedPen=parseFloat(document.getElementById('optPen').value)||0;
+  
+  let bestTax=Infinity,bestSal=lockedSal,bestPen=lockedPen;
+  
+  const salVals=salLocked?[lockedSal]:[0,5000,6708,8000,9000,10000,11000,12570,15000,20000,25000,30000,35000,40000,45000,50270];
+  const penVals=penLocked?[lockedPen]:[0,5000,10000,15000,20000,25000,30000,35000,40000,50000,60000];
+  
+  // Broad search
+  for(let s of salVals){
+    if(s>gp)continue;
+    for(let p of penVals){
+      if(s+p>gp||p>60000)continue;
+      const r=calcOpt(gp,s,p);
+      if(r.totalTax<bestTax){bestTax=r.totalTax;bestSal=s;bestPen=p}
+    }
+  }
+  
+  // Fine-tune unlocked fields
+  const sLo=salLocked?bestSal:Math.max(bestSal-3000,0);
+  const sHi=salLocked?bestSal:Math.min(bestSal+3000,gp);
+  const sStep=salLocked?1:100;
+  const pLo=penLocked?bestPen:Math.max(bestPen-10000,0);
+  const pHi=penLocked?bestPen:Math.min(bestPen+10000,60000);
+  const pStep=penLocked?1:500;
+  
+  for(let s=sLo;s<=sHi;s+=sStep){
+    for(let p=pLo;p<=pHi;p+=pStep){
+      if(s+p>gp||p>60000)continue;
+      const r=calcOpt(gp,s,p);
+      if(r.totalTax<bestTax){bestTax=r.totalTax;bestSal=s;bestPen=p}
+    }
+  }
+  
+  document.getElementById('optSal').value=bestSal;
+  document.getElementById('optPen').value=bestPen;
+  tryCalc('opt');
+}
+
+function runOpt(){
+  const gp=parseFloat(document.getElementById('optProfit').value)||0;
+  const sal=parseFloat(document.getElementById('optSal').value)||0;
+  const pen=parseFloat(document.getElementById('optPen').value)||0;
+  if(gp<=0){alert('Please enter company gross profit.');return}
+  
+  const r=calcOpt(gp,sal,pen);
+  
+  document.getElementById('optTH').textContent=fmt(r.takeHome);
+  document.getElementById('optTotalTax').textContent=fmt(r.totalTax);
+  document.getElementById('optEffRate').textContent=r.effRate+'%';
+  
+  // Corp level
+  let cl='<div class="result-line"><span class="rl">Gross Profit</span><span class="rv">'+fmt(gp)+'</span></div>';
+  cl+='<div class="result-line"><span class="rl">Less: Salary</span><span class="rv">-'+fmt(sal)+'</span></div>';
+  cl+='<div class="result-line"><span class="rl">Less: Employer NI (15%)</span><span class="rv">-'+fmt(r.empNI)+'</span></div>';
+  if(pen>0)cl+='<div class="result-line"><span class="rl">Less: Employer Pension</span><span class="rv">-'+fmt(pen)+'</span></div>';
+  cl+='<div class="result-line"><span class="rl">Taxable Profit</span><span class="rv">'+fmt(r.adjProfit)+'</span></div>';
+  cl+='<div class="result-line"><span class="rl">Corporation Tax ('+(r.adjProfit<=50000?'19%':r.adjProfit>=250000?'25%':'marginal')+')</span><span class="rv">-'+fmt(r.ct)+'</span></div>';
+  cl+='<div class="result-line total"><span class="rl">Available for Dividends</span><span class="rv">'+fmt(r.distributable)+'</span></div>';
+  document.getElementById('optCorpL').innerHTML=cl;
+  
+  // Personal level
+  let pl='<div class="result-line"><span class="rl">Income Tax on Salary</span><span class="rv">'+fmt(r.salTax)+'</span></div>';
+  pl+='<div class="result-line"><span class="rl">Employee NI (8%/2%)</span><span class="rv">'+fmt(r.empeeNI)+'</span></div>';
+  pl+='<div class="result-line"><span class="rl">Dividend Tax (10.75%/35.75%)</span><span class="rv">'+fmt(r.divTax)+'</span></div>';
+  pl+='<div class="result-line total"><span class="rl">Total Personal Tax</span><span class="rv">'+fmt(r.salTax+r.empeeNI+r.divTax)+'</span></div>';
+  document.getElementById('optPersL').innerHTML=pl;
+  
+  // Summary
+  let sl='<div class="result-line"><span class="rl">Gross Company Profit</span><span class="rv">'+fmt(gp)+'</span></div>';
+  sl+='<div class="result-line"><span class="rl">Salary (gross)</span><span class="rv">'+fmt(sal)+'</span></div>';
+  if(pen>0)sl+='<div class="result-line"><span class="rl">Pension Contribution</span><span class="rv">'+fmt(pen)+'</span></div>';
+  sl+='<div class="result-line"><span class="rl">Dividends</span><span class="rv">'+fmt(r.distributable)+'</span></div>';
+  sl+='<div class="result-line"><span class="rl">Corporation Tax</span><span class="rv">-'+fmt(r.ct)+'</span></div>';
+  sl+='<div class="result-line"><span class="rl">Employer NI</span><span class="rv">-'+fmt(r.empNI)+'</span></div>';
+  sl+='<div class="result-line"><span class="rl">Employee NI</span><span class="rv">-'+fmt(r.empeeNI)+'</span></div>';
+  sl+='<div class="result-line"><span class="rl">Income Tax</span><span class="rv">-'+fmt(r.salTax)+'</span></div>';
+  sl+='<div class="result-line"><span class="rl">Dividend Tax</span><span class="rv">-'+fmt(r.divTax)+'</span></div>';
+  sl+='<div class="result-line total"><span class="rl">Total Tax</span><span class="rv">'+fmt(r.totalTax)+'</span></div>';
+  sl+='<div class="result-line total"><span class="rl">Take-Home Pay</span><span class="rv">'+fmt(r.takeHome)+'</span></div>';
+  document.getElementById('optSumL').innerHTML=sl;
+  
+  // Explanation
+  let ex='';
+  const salLk=document.getElementById('optSalLock').checked,penLk=document.getElementById('optPenLock').checked;
+  if(salLk||penLk){let lk=[];if(salLk)lk.push('salary');if(penLk)lk.push('pension');ex+='<b style="color:var(--tl)">🔒 Locked: '+lk.join(' & ')+'</b> — optimized the remaining fields around your '+(lk.length>1?'choices':'choice')+'.<br><br>'}
+  if(sal<=5000)ex+='<b>Salary at £'+sal.toLocaleString()+':</b> Below the employer NI threshold (£5,000), so zero employer NI is due. However, you may not be using your full Personal Allowance.<br><br>';
+  else if(sal<=12570)ex+='<b>Salary at £'+sal.toLocaleString()+':</b> Uses '+(sal>=12570?'all':'part')+' of your £12,570 Personal Allowance. Employer NI of '+fmt(r.empNI)+' is due on the portion above £5,000, but this is deductible against Corporation Tax.<br><br>';
+  else ex+='<b>Salary at £'+sal.toLocaleString()+':</b> Exceeds the Personal Allowance, so income tax applies on £'+(sal-12570).toLocaleString()+'. Consider whether a lower salary with more dividends would be more efficient.<br><br>';
+  if(r.paTapered)ex+='<b style="color:var(--co)">⚠ PA Tapering:</b> Your total income (£'+Math.round(sal+r.distributable).toLocaleString()+') exceeds £100,000. Personal Allowance reduced from £12,570 to £'+r.pa.toLocaleString()+'. This creates an effective ~60% marginal tax rate in the £100k–£125,140 band.<br><br>';
+  if(pen>0)ex+='<b>Pension of '+fmt(pen)+':</b> Reduces the corporation tax bill by '+fmt(pen*(r.adjProfit<=50000?.19:.25))+' with no NI or income tax due. This is one of the most tax-efficient extraction methods, but funds are locked until retirement age.<br><br>';
+  ex+='<b>Dividends of '+fmt(r.distributable)+':</b> Taxed at dividend rates (10.75%/35.75%) which are lower than income tax + NI rates on the equivalent salary. The first £500 is tax-free.<br><br>';
+  ex+='<b>Effective total tax rate: '+r.effRate+'%</b> across corporation tax, NI, income tax, and dividend tax combined.';
+  document.getElementById('optExplain').innerHTML=ex;
+  
+  document.getElementById('optResults').classList.add('show');
+  setTimeout(()=>document.getElementById('optResults').scrollIntoView({behavior:'smooth'}),100);
+}
 </script>
 </body>
 </html>
