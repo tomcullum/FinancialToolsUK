@@ -30,7 +30,7 @@ footer{padding:50px 48px 40px;border-top:1px solid var(--bd);position:relative;z
 .calc-profit{font-size:.88rem;color:var(--txd);margin:-12px 0 24px;font-family:var(--mo)}.calc-profit b{color:var(--ac)}
 .calc-check{display:flex;align-items:center;gap:10px;margin-bottom:24px;font-size:.82rem;color:var(--txd);cursor:pointer}
 .calc-check input{width:18px;height:18px;accent-color:var(--ac);cursor:pointer}
-.calc-actions{display:flex;gap:12px;margin-top:8px}
+.calc-actions{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap}
 .calc-actions button{flex:1;padding:14px 24px;border-radius:50px;font-family:var(--sa);font-weight:700;font-size:.88rem;cursor:pointer;transition:all .2s}
 .calc-note{text-align:center;font-size:.72rem;color:var(--txm);margin-top:16px;display:flex;align-items:center;justify-content:center;gap:6px}
 .calc-tabs{display:flex;gap:0;margin-bottom:32px;border:1px solid var(--bd);border-radius:12px;overflow:hidden;max-width:640px;margin-left:auto;margin-right:auto}
