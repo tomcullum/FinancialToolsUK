@@ -72,3 +72,5 @@ footer{padding:50px 48px 40px;border-top:1px solid var(--bd);position:relative;z
 .nav-dd-menu a{display:block;padding:11px 22px;font-size:.85rem;white-space:nowrap;color:var(--txd);transition:color .2s}
 .nav-dd-menu a:hover{color:var(--ac)}
 @media(max-width:900px){.nav-dd{width:100%;flex-direction:column;align-items:stretch}.nav-dd>a{width:100%}.nav-dd-menu{position:static;display:none;transform:none;border:none;background:transparent;backdrop-filter:none;padding:0 0 0 20px;min-width:0}.nav-dd.open .nav-dd-menu{display:block}.nav-dd::after{display:none}}
+.pha>.article{padding-bottom:0}
+@media(max-width:900px){.nav-dd{text-align:center}.nav-dd>a{justify-content:center}}
