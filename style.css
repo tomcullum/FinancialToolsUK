@@ -60,15 +60,5 @@ footer{padding:50px 48px 40px;border-top:1px solid var(--bd);position:relative;z
 .emodal-box .em-skip{display:block;margin-top:14px;font-size:.78rem;color:var(--txm);background:none;border:none;cursor:pointer;font-family:var(--sa);text-decoration:underline;transition:color .2s}.emodal-box .em-skip:hover{color:var(--txd)}
 .emodal-box .em-note{font-size:.7rem;color:var(--txm);margin-top:10px}
 @media(max-width:900px){nav{padding:14px 20px}.nl{display:none;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:rgba(7,10,7,.95);backdrop-filter:blur(24px);padding:24px;border-bottom:1px solid var(--bd);gap:16px}.nl.opn{display:flex}.mt{display:block}.tg,.ig,.ag{grid-template-columns:1fr}.av{grid-template-columns:1fr}section{padding:60px 20px}.ph{padding:120px 20px 60px}.th,.tb,.tf,.tfo{padding-left:24px;padding-right:24px}.si{padding:20px 24px}.sb{flex-wrap:wrap}.cx2{padding:50px 28px}.fr{flex-direction:column}.dc{grid-template-columns:1fr;gap:40px}.sbar{position:static}.fin{flex-direction:column;gap:30px}.hero{padding:120px 20px 60px}.calc-row,.result-grid{grid-template-columns:1fr}.calc-box{padding:28px}}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--bdl);border-radius:4px}
-
-.nav-dd{position:relative}
-.nav-dd-toggle{display:flex;align-items:center;gap:4px}
-.nav-dd-toggle svg{transition:transform .2s}
-.nav-dd-menu{display:none;position:absolute;top:100%;left:0;background:rgba(7,10,7,.95);backdrop-filter:blur(24px);border:1px solid var(--bd);border-radius:10px;padding:8px 0;min-width:220px;z-index:100;margin-top:8px}
-.nav-dd-menu a{display:block;padding:10px 20px;font-size:.85rem;white-space:nowrap}
-.nav-dd:hover .nav-dd-menu{display:block}
-.nav-dd:hover .nav-dd-toggle svg{transform:rotate(180deg)}
-@media(max-width:900px){.nav-dd{width:100%}.nav-dd-menu{position:static;display:none;border:none;background:none;backdrop-filter:none;padding:0 0 0 16px;margin:0}.nav-dd.open .nav-dd-menu{display:block}.nav-dd-toggle{width:100%}}
-.ph .article{padding-top:0}
 .pha{padding-top:100px}
 @media(max-width:900px){.pha{padding-top:80px}}
